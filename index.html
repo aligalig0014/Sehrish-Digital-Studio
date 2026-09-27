@@ -8,9 +8,6 @@
 <title>Sehrish Media Studio</title>
 
 <style>
-
-/* ================= BASIC ================= */
-
 *{
     margin:0;
     padding:0;
@@ -19,548 +16,118 @@
 }
 
 html{
-    scroll-padding-top:90px;
+    scroll-padding-top:85px;
 }
 
 body{
-    margin:0;
-    background:#02060b;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#03070c;
     color:#fff;
-    font-family:Arial,Helvetica,sans-serif;
     overflow-x:hidden;
 }
 
 :root{
-    --gold:#ffd21c;
-    --gold2:#ff9d00;
-    --black:#02060b;
-    --card:#07111b;
-    --white:#fff;
-    --gray:#b8b8b8;
+    --gold:#d8b15a;
+    --gold2:#f5d98b;
+    --dark:#03070c;
+    --card:#09111b;
+    --border:rgba(216,177,90,.65);
 }
 
 img{
     max-width:100%;
+    display:block;
 }
 
-
-/* ==================================================
-   TOP PHOTO
-   Alig.png
-================================================== */
+/* ================= TOP IMAGE ================= */
 
 .top-photo{
     width:100%;
     background:#000;
-    line-height:0;
     border-bottom:2px solid var(--gold);
+    box-shadow:0 0 25px rgba(216,177,90,.25);
 }
 
 .top-photo img{
     width:100%;
     height:auto;
-    display:block;
-    object-fit:contain;
+    max-height:600px;
+    object-fit:cover;
 }
 
-
-/* ==================================================
-   MOVING CONTACT / DETAILS BAR
-================================================== */
+/* ================= TICKER ================= */
 
 .ticker{
     width:100%;
     overflow:hidden;
-    background:#050b12;
+    background:#070d14;
     border-bottom:1px solid var(--gold);
-    border-top:1px solid rgba(255,210,28,.3);
+    padding:12px 0;
     white-space:nowrap;
 }
 
 .ticker-track{
-    display:inline-flex;
-    align-items:center;
-    min-width:max-content;
-    animation:tickerMove 22s linear infinite;
-}
-
-.ticker-item{
-    display:inline-flex;
-    align-items:center;
-    gap:9px;
-    padding:14px 35px;
-    color:#fff;
+    display:inline-block;
+    padding-left:100%;
+    animation:ticker 20s linear infinite;
+    color:var(--gold2);
     font-size:14px;
     font-weight:bold;
 }
 
-.ticker-item strong{
-    color:var(--gold);
+@keyframes ticker{
+    0%{transform:translateX(0)}
+    100%{transform:translateX(-100%)}
 }
 
-.ticker-item .wa{
-    color:#20d66a;
+/* ================= NAVIGATION ================= */
+
+.nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(3,7,12,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--gold);
+    padding:12px 10px;
 }
 
-.ticker-separator{
-    color:var(--gold);
-    font-size:20px;
-}
-
-@keyframes tickerMove{
-    0%{
-        transform:translateX(0);
-    }
-
-    100%{
-        transform:translateX(-50%);
-    }
-}
-
-
-/* ==================================================
-   BORDERED NAVIGATION
-================================================== */
-
-.nav-area{
-    width:100%;
-    background:#02060b;
-    padding:10px 0;
-}
-
-.nav-box{
-    width:94%;
-    max-width:1250px;
-    min-height:68px;
+.nav-inner{
+    max-width:1200px;
     margin:auto;
-
     display:flex;
+    justify-content:center;
     align-items:center;
-    justify-content:space-between;
-
-    padding:8px 15px;
-
-    border:2px solid var(--gold);
-    border-radius:13px;
-
-    background:
-        linear-gradient(145deg,#0b131c,#03070c);
-
-    box-shadow:
-        0 0 12px rgba(255,210,28,.18),
-        inset 0 0 15px rgba(255,210,28,.04);
+    gap:10px;
+    flex-wrap:wrap;
 }
 
-.logo{
-    color:var(--gold);
-    font-size:25px;
-    font-weight:bold;
-    white-space:nowrap;
-}
-
-.logo small{
-    display:block;
-    color:#fff;
-    font-size:9px;
-    letter-spacing:3px;
-    text-align:center;
-}
-
-.menu{
-    list-style:none;
-    display:flex;
-    align-items:center;
-    gap:5px;
-    overflow-x:auto;
-}
-
-.menu li{
-    flex-shrink:0;
-}
-
-.menu a{
-    display:block;
+.nav a{
     color:#fff;
     text-decoration:none;
-    font-weight:bold;
+    padding:9px 15px;
+    border:1px solid rgba(216,177,90,.45);
+    border-radius:7px;
     font-size:13px;
-
-    padding:11px 14px;
-
-    border-radius:8px;
-
     transition:.3s;
 }
 
-.menu a:hover{
+.nav a:hover{
     background:var(--gold);
     color:#000;
+    box-shadow:0 0 15px rgba(216,177,90,.45);
 }
 
-.menu .active{
-    background:var(--gold);
-    color:#000;
-}
-
-.menu .whatsapp{
-    background:#12b957;
-    color:#fff;
-}
-
-
-/* ==================================================
-   SLIDER
-================================================== */
-
-.slider-wrapper{
-    width:94%;
-    max-width:1250px;
-    margin:15px auto 30px;
-}
-
-.slider{
-    position:relative;
-    width:100%;
-    overflow:hidden;
-
-    border:2px solid var(--gold);
-    border-radius:18px;
-
-    box-shadow:
-        0 0 25px rgba(255,210,28,.18),
-        inset 0 0 20px rgba(255,210,28,.04);
-
-    background:#000;
-}
-
-.slider-track{
-    display:flex;
-    width:300%;
-    animation:slideShow 15s infinite;
-}
-
-.slide{
-    width:33.333333%;
-    flex-shrink:0;
-    position:relative;
-}
-
-.slide img{
-    display:block;
-    width:100%;
-    height:auto;
-    object-fit:cover;
-}
-
-.slide-caption{
-    position:absolute;
-    left:35px;
-    bottom:35px;
-
-    padding:15px 20px;
-
-    background:rgba(0,0,0,.72);
-    border-left:3px solid var(--gold);
-    border-radius:8px;
-}
-
-.slide-caption small{
-    color:var(--gold);
-    letter-spacing:2px;
-}
-
-.slide-caption h2{
-    font-size:30px;
-    margin-top:5px;
-}
-
-@keyframes slideShow{
-
-    0%,28%{
-        transform:translateX(0);
-    }
-
-    33%,61%{
-        transform:translateX(-33.333333%);
-    }
-
-    66%,94%{
-        transform:translateX(-66.666666%);
-    }
-
-    100%{
-        transform:translateX(0);
-    }
-}
-
-
-/* ==================================================
-   GENERATED THIRD PHOTO / VISUAL
-   NO EXTRA PHOTO NEEDED
-================================================== */
-
-.generated-studio{
-    width:94%;
-    max-width:1250px;
-    height:400px;
-
-    margin:0 auto 45px;
-
-    position:relative;
-    overflow:hidden;
-
-    border:2px solid var(--gold);
-    border-radius:18px;
-
-    background:
-        radial-gradient(
-            circle at 78% 28%,
-            rgba(255,180,20,.35),
-            transparent 16%
-        ),
-        radial-gradient(
-            circle at 20% 50%,
-            rgba(0,100,180,.25),
-            transparent 25%
-        ),
-        linear-gradient(
-            135deg,
-            #020509,
-            #0a1721 48%,
-            #03070c
-        );
-
-    box-shadow:
-        0 0 25px rgba(255,210,28,.15);
-}
-
-.generated-studio .title-text{
-    position:absolute;
-    top:35px;
-    left:35px;
-    z-index:5;
-}
-
-.generated-studio .title-text small{
-    color:var(--gold);
-    letter-spacing:3px;
-}
-
-.generated-studio .title-text h2{
-    margin-top:8px;
-    font-size:34px;
-}
-
-.generated-studio .title-text p{
-    margin-top:8px;
-    color:#ccc;
-}
-
-
-/* desk */
-
-.desk{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:105px;
-
-    background:
-        linear-gradient(
-            #151515,
-            #040404
-        );
-
-    border-top:3px solid #8d6100;
-}
-
-
-/* monitor */
-
-.monitor{
-    position:absolute;
-
-    width:430px;
-    height:235px;
-
-    left:50%;
-    top:70px;
-
-    transform:translateX(-50%);
-
-    background:#030609;
-
-    border:9px solid #111;
-    border-radius:13px;
-
-    box-shadow:
-        0 0 30px rgba(0,0,0,.9);
-}
-
-.monitor-screen{
-    width:100%;
-    height:100%;
-
-    position:relative;
-
-    background:
-        linear-gradient(
-            145deg,
-            #06192d,
-            #075b80 48%,
-            #07111b 49%
-        );
-}
-
-.monitor-screen:before{
-    content:"VIDEO EDITING";
-
-    position:absolute;
-
-    left:25px;
-    bottom:25px;
-
-    color:#fff;
-
-    font-size:22px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.monitor-screen:after{
-    content:"SEHRISH MEDIA";
-
-    position:absolute;
-
-    right:20px;
-    top:20px;
-
-    color:var(--gold);
-
-    font-weight:bold;
-}
-
-.monitor-stand{
-    position:absolute;
-
-    width:75px;
-    height:45px;
-
-    left:50%;
-    bottom:-45px;
-
-    transform:translateX(-50%);
-
-    background:#111;
-}
-
-
-/* camera */
-
-.camera{
-    position:absolute;
-
-    left:8%;
-    bottom:65px;
-
-    width:145px;
-    height:90px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #333,
-            #050505
-        );
-
-    border:3px solid #444;
-    border-radius:14px;
-}
-
-.camera:after{
-    content:"";
-
-    position:absolute;
-
-    width:70px;
-    height:70px;
-
-    right:-45px;
-    top:7px;
-
-    border-radius:50%;
-
-    border:5px solid #555;
-
-    background:
-        radial-gradient(
-            circle,
-            #28343d 0 12%,
-            #050505 13% 52%,
-            #181818 53%
-        );
-}
-
-
-/* microphone */
-
-.microphone{
-    position:absolute;
-
-    right:9%;
-    bottom:65px;
-
-    width:32px;
-    height:125px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #555,
-            #111,
-            #555
-        );
-
-    border-radius:20px;
-}
-
-.microphone:before{
-    content:"";
-
-    position:absolute;
-
-    width:70px;
-    height:80px;
-
-    left:-19px;
-    top:-32px;
-
-    border:5px solid #777;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #252525,
-            #050505
-        );
-}
-
-
-/* ==================================================
-   COMMON SECTIONS
-================================================== */
-
-section{
-    padding:55px 0;
-}
+/* ================= COMMON ================= */
 
 .container{
-    width:94%;
-    max-width:1250px;
+    width:92%;
+    max-width:1150px;
     margin:auto;
+}
+
+section{
+    padding:65px 0;
 }
 
 .section-title{
@@ -568,1199 +135,1128 @@ section{
     margin-bottom:35px;
 }
 
-.section-title small{
-    color:var(--gold);
-    letter-spacing:3px;
-    font-weight:bold;
-}
-
 .section-title h2{
-    font-size:34px;
-    margin-top:8px;
+    color:var(--gold2);
+    font-size:30px;
+    margin-bottom:10px;
 }
 
 .section-title p{
-    color:#aaa;
-    margin-top:10px;
+    color:#aeb8c5;
+    font-size:14px;
 }
 
+.gold-line{
+    width:80px;
+    height:3px;
+    margin:12px auto;
+    background:var(--gold);
+    box-shadow:0 0 12px var(--gold);
+}
 
-/* ==================================================
-   SERVICES
-================================================== */
+/* ================= SLIDER ================= */
 
-.services{
+.slider{
+    width:100%;
+    overflow:hidden;
+    border-bottom:2px solid var(--gold);
+    background:#000;
+}
+
+.slides{
+    display:flex;
+    width:300%;
+    animation:slide 15s infinite;
+}
+
+.slide{
+    width:33.333%;
+    position:relative;
+}
+
+.slide img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.slide-overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:35px 20px 25px;
+    background:linear-gradient(transparent,rgba(0,0,0,.95));
+}
+
+.slide-overlay h2{
+    color:var(--gold2);
+    font-size:28px;
+}
+
+.slide-overlay p{
+    margin-top:7px;
+    color:#ddd;
+}
+
+@keyframes slide{
+    0%,28%{transform:translateX(0)}
+    33%,61%{transform:translateX(-33.333%)}
+    66%,94%{transform:translateX(-66.666%)}
+    100%{transform:translateX(0)}
+}
+
+/* ================= GENERATED THIRD VISUAL ================= */
+
+.generated-visual{
+    height:500px;
+    background:
+        radial-gradient(circle at 50% 30%,rgba(216,177,90,.2),transparent 30%),
+        linear-gradient(135deg,#020406,#101b28,#03070c);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    border:1px solid rgba(216,177,90,.25);
+}
+
+.visual-box{
+    width:75%;
+    max-width:650px;
+    padding:55px 25px;
+    border:2px solid var(--gold);
+    border-radius:20px;
+    box-shadow:
+        0 0 25px rgba(216,177,90,.25),
+        inset 0 0 30px rgba(216,177,90,.08);
+}
+
+.visual-box h2{
+    color:var(--gold2);
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.visual-box p{
+    color:#ddd;
+    line-height:1.7;
+}
+
+/* ================= SERVICES ================= */
+
+.services-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .service-card{
-    position:relative;
-
-    padding:25px;
-
-    min-height:175px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #0b1722,
-            #04090f
-        );
-
-    border:1px solid var(--gold);
-    border-radius:17px;
-
+    background:linear-gradient(145deg,#0b141f,#05090e);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:28px 20px;
+    text-align:center;
     transition:.35s;
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
 }
 
 .service-card:hover{
     transform:translateY(-7px);
-
-    box-shadow:
-        0 12px 30px rgba(255,210,28,.18);
+    box-shadow:0 0 25px rgba(216,177,90,.18);
 }
 
-.service-icon{
-    width:58px;
-    height:58px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border:2px solid var(--gold);
-    border-radius:50%;
-
-    color:var(--gold);
-
-    font-size:26px;
-
+.icon{
+    font-size:35px;
     margin-bottom:15px;
-
-    box-shadow:
-        0 0 15px rgba(255,210,28,.13);
 }
 
 .service-card h3{
-    margin-bottom:8px;
+    color:var(--gold2);
+    margin-bottom:10px;
 }
 
 .service-card p{
-    color:#aaa;
+    color:#aeb8c5;
+    font-size:14px;
     line-height:1.6;
 }
 
-
-/* ==================================================
-   ABOUT
-================================================== */
+/* ================= ABOUT ================= */
 
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:22px;
+    gap:25px;
 }
 
 .about-box{
-    background:#071019;
-
-    border:1px solid var(--gold);
-    border-radius:18px;
-
+    background:#08111b;
+    border:1px solid var(--border);
+    border-radius:14px;
     padding:30px;
 }
 
-.about-box h2{
-    color:var(--gold);
+.about-box h3{
+    color:var(--gold2);
     margin-bottom:15px;
 }
 
-.about-box p{
-    color:#ccc;
+.about-box p,
+.about-box li{
+    color:#b9c1cb;
     line-height:1.8;
+    font-size:14px;
 }
 
-.check-list{
-    list-style:none;
+.about-box ul{
+    padding-left:20px;
 }
 
-.check-list li{
-    padding:9px 0;
-    color:#eee;
-}
+/* ================= PORTFOLIO ================= */
 
-.check-list li:before{
-    content:"✓";
-    color:var(--gold);
-    font-weight:bold;
-    margin-right:10px;
-}
-
-
-/* ==================================================
-   PORTFOLIO
-================================================== */
-
-.portfolio{
+.portfolio-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.portfolio-box{
-    height:205px;
-
-    border:1px solid var(--gold);
-    border-radius:14px;
-
+.portfolio-card{
     overflow:hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #06111d,
-            #10304a,
-            #030609
-        );
-
-    position:relative;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:#080f17;
 }
 
-.portfolio-box img{
+.portfolio-card img{
     width:100%;
-    height:100%;
+    height:230px;
     object-fit:cover;
-
-    transition:.4s;
 }
 
-.portfolio-box:hover img{
-    transform:scale(1.06);
+.portfolio-card div{
+    padding:17px;
 }
 
+.portfolio-card h3{
+    color:var(--gold2);
+    margin-bottom:6px;
+}
 
-/* generated portfolio cards */
+.portfolio-card p{
+    color:#aeb8c5;
+    font-size:13px;
+}
 
-.generated-card{
-    height:100%;
+/* ================= ORDER ================= */
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
+.order-section{
     background:
-        radial-gradient(
-            circle,
-            #203d50,
-            #03070c 70%
-        );
+        linear-gradient(rgba(3,7,12,.94),rgba(3,7,12,.97)),
+        radial-gradient(circle at center,rgba(216,177,90,.12),transparent 45%);
 }
 
-.generated-card strong{
+.order-box{
+    max-width:850px;
+    margin:auto;
+    background:linear-gradient(145deg,#0b141f,#05090e);
+    border:1px solid var(--gold);
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 0 30px rgba(216,177,90,.12);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
     display:block;
-
-    color:var(--gold);
-
-    font-size:24px;
+    color:var(--gold2);
+    font-size:13px;
+    margin-bottom:7px;
 }
 
-.generated-card span{
-    display:block;
-
-    margin-top:8px;
-
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    background:#03070c;
     color:#fff;
-
-    font-size:12px;
+    border:1px solid rgba(216,177,90,.45);
+    border-radius:8px;
+    padding:13px;
+    outline:none;
+    font-size:14px;
 }
 
-
-/* ==================================================
-   CONTACT
-================================================== */
-
-.contact-section{
-    text-align:center;
-
-    border-top:1px solid var(--gold);
-    border-bottom:1px solid var(--gold);
-
-    background:
-        radial-gradient(
-            circle at center,
-            #152536,
-            #02060b 70%
-        );
+.form-group textarea{
+    min-height:130px;
+    resize:vertical;
 }
 
-.contact-section h2{
-    color:var(--gold);
-    font-size:36px;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 10px rgba(216,177,90,.15);
 }
 
-.contact-section p{
-    color:#aaa;
-    margin:12px 0 25px;
-}
-
-.whatsapp-button{
-    display:inline-block;
-
-    background:#12b957;
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-size:20px;
-
+.order-btn,
+.review-btn{
+    width:100%;
+    border:none;
+    background:linear-gradient(135deg,#b78b32,#f2d27e,#b78b32);
+    color:#080808;
+    padding:14px;
+    border-radius:8px;
     font-weight:bold;
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-    box-shadow:
-        0 0 25px rgba(18,185,87,.3);
-
+    cursor:pointer;
+    font-size:15px;
     transition:.3s;
 }
 
-.whatsapp-button:hover{
-    transform:scale(1.04);
+.order-btn:hover,
+.review-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(216,177,90,.35);
 }
 
+.order-note{
+    text-align:center;
+    color:#929eab;
+    font-size:12px;
+    margin-top:12px;
+}
 
-/* ==================================================
-   FOOTER
-================================================== */
+/* ================= REVIEWS ================= */
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.review-card{
+    background:#08111b;
+    border:1px solid rgba(216,177,90,.45);
+    border-radius:14px;
+    padding:22px;
+}
+
+.stars{
+    color:#f5d98b;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.review-card h4{
+    color:var(--gold2);
+    margin-bottom:8px;
+}
+
+.review-card p{
+    color:#b5bec9;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.review-form{
+    max-width:700px;
+    margin:auto;
+    background:#08111b;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:25px;
+}
+
+.rating{
+    display:flex;
+    gap:8px;
+    margin-bottom:15px;
+}
+
+.rating input{
+    display:none;
+}
+
+.rating label{
+    font-size:28px;
+    color:#555;
+    cursor:pointer;
+}
+
+.rating label:hover,
+.rating label:hover ~ label{
+    color:var(--gold2);
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    padding:35px;
+    background:#08111b;
+    border:1px solid var(--gold);
+    border-radius:16px;
+}
+
+.contact-box h2{
+    color:var(--gold2);
+    margin-bottom:12px;
+}
+
+.contact-box p{
+    color:#adb7c2;
+    margin-bottom:20px;
+}
+
+.whatsapp{
+    display:inline-block;
+    text-decoration:none;
+    background:#1da851;
+    color:white;
+    padding:13px 25px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.04);
+    box-shadow:0 0 20px rgba(29,168,81,.3);
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-    background:#02050a;
-
-    border-top:1px solid #252525;
-
+    border-top:1px solid var(--gold);
+    background:#020508;
+    padding:25px 15px;
     text-align:center;
-
-    padding:30px 15px;
-
-    color:#888;
 }
 
-footer strong{
-    color:var(--gold);
-    font-size:20px;
+footer h3{
+    color:var(--gold2);
+    margin-bottom:8px;
 }
 
+footer p{
+    color:#7f8a97;
+    font-size:12px;
+}
 
-/* ==================================================
-   MOBILE
-================================================== */
+/* ================= MOBILE ================= */
 
-@media(max-width:850px){
+@media(max-width:800px){
 
-    .nav-box{
-        flex-direction:column;
-        gap:10px;
-        padding:12px 8px;
+    .nav-inner{
+        gap:6px;
     }
 
-    .menu{
-        width:100%;
-        justify-content:flex-start;
+    .nav a{
+        padding:8px 10px;
+        font-size:12px;
     }
 
-    .services{
+    .slide img,
+    .generated-visual{
+        height:330px;
+    }
+
+    .visual-box{
+        width:88%;
+        padding:35px 15px;
+    }
+
+    .visual-box h2{
+        font-size:27px;
+    }
+
+    .services-grid,
+    .portfolio-grid,
+    .review-grid{
         grid-template-columns:1fr 1fr;
     }
 
     .about-grid{
         grid-template-columns:1fr;
     }
-
-    .portfolio{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .generated-studio{
-        height:350px;
-    }
 }
 
+@media(max-width:560px){
 
-@media(max-width:520px){
-
-    /* TOP PHOTO MOBILE */
+    section{
+        padding:45px 0;
+    }
 
     .top-photo img{
         width:100%;
         height:auto;
+        max-height:none;
         object-fit:contain;
     }
 
+    .ticker{
+        padding:10px 0;
+    }
 
-    /* TICKER */
-
-    .ticker-item{
-        padding:12px 22px;
+    .ticker-track{
         font-size:12px;
     }
 
-
-    /* NAV */
-
-    .nav-area{
-        padding:8px 0;
+    .nav{
+        padding:8px 5px;
     }
 
-    .nav-box{
-        width:96%;
-        border-radius:11px;
+    .nav-inner{
+        justify-content:center;
     }
 
-    .logo{
-        font-size:22px;
-    }
-
-    .menu a{
-        padding:9px 11px;
+    .nav a{
+        padding:7px 9px;
         font-size:11px;
     }
 
-
-    /* SLIDER */
-
-    .slider-wrapper{
-        width:96%;
-        margin-top:10px;
-    }
-
-    .slider{
-        border-radius:12px;
-    }
-
-    .slide img{
-        width:100%;
-        height:auto;
-        object-fit:contain;
-    }
-
-    .slide-caption{
-        left:12px;
-        bottom:12px;
-        padding:8px 12px;
-    }
-
-    .slide-caption h2{
-        font-size:17px;
-    }
-
-
-    /* GENERATED THIRD VISUAL */
-
-    .generated-studio{
-        width:96%;
+    .slide img,
+    .generated-visual{
         height:260px;
-        border-radius:12px;
     }
 
-    .generated-studio .title-text{
-        top:15px;
-        left:15px;
+    .slide-overlay{
+        padding:25px 15px 15px;
     }
 
-    .generated-studio .title-text h2{
-        font-size:20px;
+    .slide-overlay h2{
+        font-size:21px;
     }
 
-    .generated-studio .title-text p{
-        font-size:11px;
-    }
-
-    .monitor{
-        width:210px;
-        height:125px;
-        top:70px;
-    }
-
-    .monitor-screen:before{
-        font-size:13px;
-        left:12px;
-        bottom:12px;
-    }
-
-    .monitor-screen:after{
-        font-size:9px;
-    }
-
-    .camera{
-        transform:scale(.55);
-        transform-origin:left bottom;
-        left:1%;
-    }
-
-    .microphone{
-        transform:scale(.65);
-        transform-origin:right bottom;
-        right:1%;
-    }
-
-
-    /* SECTIONS */
-
-    section{
-        padding:42px 0;
+    .slide-overlay p{
+        font-size:12px;
     }
 
     .section-title h2{
-        font-size:27px;
+        font-size:25px;
     }
 
-
-    /* SERVICES */
-
-    .services{
+    .services-grid,
+    .portfolio-grid,
+    .review-grid{
         grid-template-columns:1fr;
     }
 
-    .service-card{
-        min-height:auto;
+    .form-grid{
+        grid-template-columns:1fr;
     }
 
-
-    /* PORTFOLIO */
-
-    .portfolio{
-        grid-template-columns:1fr 1fr;
+    .form-group.full{
+        grid-column:auto;
     }
 
-    .portfolio-box{
-        height:140px;
+    .order-box,
+    .review-form,
+    .contact-box{
+        padding:20px;
     }
-
-
-    /* CONTACT */
-
-    .contact-section h2{
-        font-size:28px;
-    }
-
-    .whatsapp-button{
-        font-size:16px;
-        padding:13px 20px;
-    }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ==================================================
-     1. SAB SE UPAR ALIG PHOTO
-================================================== -->
+<!-- ================= TOP IMAGE ================= -->
 
 <div class="top-photo">
-
-    <img
-        src="Alig.png"
-        alt="Alig Sehrish Media Studio">
-
+    <img src="Alig.png" alt="Sehrish Media Studio">
 </div>
 
-
-<!-- ==================================================
-     2. CONTACT / DETAILS MOVING SLIDER
-================================================== -->
+<!-- ================= MOVING DETAILS ================= -->
 
 <div class="ticker">
-
     <div class="ticker-track">
+        ✦ Sehrish Media Studio ✦ Website Editing ✦ News Channel Editing ✦ Photo Editing ✦ Video Editing ✦ Male & Female Voice-Over ✦ Content Formatting ✦ WhatsApp: 03220751456 ✦
+    </div>
+</div>
 
+<!-- ================= MENU ================= -->
 
-        <div class="ticker-item">
-            📞 <strong>Call Now:</strong> 0322-0751456
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#order">Order</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- ================= SLIDER ================= -->
+
+<section id="home" style="padding:0;">
+
+<div class="slider">
+
+    <div class="slides">
+
+        <!-- SLIDE 1 -->
+        <div class="slide">
+            <img src="file_0000000067908208a6b9f18b45f1d51e.png" alt="Sehrish Media Studio">
+            <div class="slide-overlay">
+                <h2>Sehrish Media Studio</h2>
+                <p>Professional Digital Creative Services</p>
+            </div>
         </div>
 
-        <div class="ticker-separator">|</div>
-
-
-        <div class="ticker-item">
-            🎬 Professional Website Editing
+        <!-- SLIDE 2 -->
+        <div class="slide">
+            <img src="Alig.png" alt="Sehrish Media Studio">
+            <div class="slide-overlay">
+                <h2>Premium Editing Services</h2>
+                <p>Modern • Professional • Creative</p>
+            </div>
         </div>
 
-        <div class="ticker-separator">|</div>
+        <!-- SLIDE 3 - CSS GENERATED -->
+        <div class="slide">
+            <div class="generated-visual">
 
+                <div class="visual-box">
+                    <h2>SEHRISH MEDIA</h2>
+                    <p>
+                        WEBSITE • PHOTO • VIDEO<br>
+                        NEWS CHANNEL • VOICE-OVER<br>
+                        CONTENT FORMATTING
+                    </p>
+                </div>
 
-        <div class="ticker-item">
-            📰 News Channel Editing
-        </div>
+            </div>
 
-        <div class="ticker-separator">|</div>
-
-
-        <div class="ticker-item">
-            📷 Photo Editing
-        </div>
-
-        <div class="ticker-separator">|</div>
-
-
-        <div class="ticker-item">
-            🎥 Video Editing
-        </div>
-
-        <div class="ticker-separator">|</div>
-
-
-        <div class="ticker-item">
-            🎙️ Male & Female Voice-Over
-        </div>
-
-        <div class="ticker-separator">|</div>
-
-
-        <div class="ticker-item">
-            📝 Content Formatting
-        </div>
-
-        <div class="ticker-separator">|</div>
-
-
-        <div class="ticker-item">
-            <span class="wa">🟢 WhatsApp:</span>
-            0322-0751456
-        </div>
-
-
-        <!-- Repeat for continuous moving effect -->
-
-        <div class="ticker-item">
-            📞 <strong>Call Now:</strong> 0322-0751456
-        </div>
-
-        <div class="ticker-separator">|</div>
-
-        <div class="ticker-item">
-            🎬 Professional Editing Services
-        </div>
-
-        <div class="ticker-separator">|</div>
-
-        <div class="ticker-item">
-            🌐 Website • News • Photo • Video • Voice-Over
-        </div>
-
-        <div class="ticker-separator">|</div>
-
-        <div class="ticker-item">
-            <span class="wa">🟢 WhatsApp:</span>
-            0322-0751456
+            <div class="slide-overlay">
+                <h2>Creative Digital Studio</h2>
+                <p>Quality work with a professional touch</p>
+            </div>
         </div>
 
     </div>
 
 </div>
 
+</section>
 
-<!-- ==================================================
-     3. BORDER HOME MENU
-================================================== -->
-
-<div class="nav-area">
-
-    <div class="nav-box">
-
-
-        <div class="logo">
-
-            👑 Sehrish
-
-            <small>
-                MEDIA STUDIO
-            </small>
-
-        </div>
-
-
-        <ul class="menu">
-
-            <li>
-                <a class="active" href="#home">
-                    🏠 Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#services">
-                    ⚙️ Services
-                </a>
-            </li>
-
-            <li>
-                <a href="#portfolio">
-                    🖼️ Portfolio
-                </a>
-            </li>
-
-            <li>
-                <a href="#about">
-                    👥 About
-                </a>
-            </li>
-
-            <li>
-                <a href="#contact">
-                    ✉️ Contact
-                </a>
-            </li>
-
-            <li>
-                <a
-                    class="whatsapp"
-                    href="https://wa.me/923220751456"
-                    target="_blank">
-
-                    🟢 WhatsApp
-
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-</div>
-
-
-<!-- ==================================================
-     4. MAIN SLIDER
-================================================== -->
-
-<div id="home" class="slider-wrapper">
-
-    <div class="slider">
-
-        <div class="slider-track">
-
-
-            <!-- SLIDE 1 -->
-
-            <div class="slide">
-
-                <img
-                    src="file_0000000067908208a6b9f18b45f1d51e.png"
-                    alt="Sehrish Media Studio Editing">
-
-                <div class="slide-caption">
-
-                    <small>
-                        PROFESSIONAL
-                    </small>
-
-                    <h2>
-                        Editing Services
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <!-- SLIDE 2 -->
-
-            <div class="slide">
-
-                <img
-                    src="Alig.png"
-                    alt="Sehrish Media Studio">
-
-                <div class="slide-caption">
-
-                    <small>
-                        SEHRISH MEDIA STUDIO
-                    </small>
-
-                    <h2>
-                        Creative • Modern • Professional
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <!-- SLIDE 3 -->
-
-            <div class="slide">
-
-                <div class="generated-studio"
-                     style="
-                     width:100%;
-                     height:100%;
-                     min-height:420px;
-                     margin:0;
-                     border:0;
-                     border-radius:0;
-                     box-shadow:none;
-                     ">
-
-                    <div class="title-text">
-
-                        <small>
-                            SEHRISH MEDIA STUDIO
-                        </small>
-
-                        <h2>
-                            Creative Editing Studio
-                        </h2>
-
-                        <p>
-                            Website • Photo • Video • Voice-Over
-                        </p>
-
-                    </div>
-
-
-                    <div class="monitor">
-
-                        <div class="monitor-screen"></div>
-
-                        <div class="monitor-stand"></div>
-
-                    </div>
-
-
-                    <div class="camera"></div>
-
-                    <div class="microphone"></div>
-
-                    <div class="desk"></div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ==================================================
-     5. SERVICES
-================================================== -->
+<!-- ================= SERVICES ================= -->
 
 <section id="services">
 
 <div class="container">
 
+<div class="section-title">
+    <h2>Our Services</h2>
+    <div class="gold-line"></div>
+    <p>Professional digital services for your projects</p>
+</div>
 
-    <div class="section-title">
+<div class="services-grid">
 
-        <small>
-            OUR SERVICES
-        </small>
+<div class="service-card">
+    <div class="icon">🌐</div>
+    <h3>Website Editing</h3>
+    <p>Modern website editing, layout improvements and responsive design.</p>
+</div>
 
-        <h2>
-            Professional Editing Services
-        </h2>
+<div class="service-card">
+    <div class="icon">📺</div>
+    <h3>News Channel Editing</h3>
+    <p>Professional news graphics, layouts and digital channel editing.</p>
+</div>
 
-        <p>
-            Creative digital services for your projects.
-        </p>
+<div class="service-card">
+    <div class="icon">📸</div>
+    <h3>Photo Editing</h3>
+    <p>Creative photo editing, enhancement and professional designs.</p>
+</div>
 
-    </div>
+<div class="service-card">
+    <div class="icon">🎙️</div>
+    <h3>Voice-Over</h3>
+    <p>Male and female voice-over services for digital content.</p>
+</div>
 
+<div class="service-card">
+    <div class="icon">🎬</div>
+    <h3>Video Editing</h3>
+    <p>Professional video editing for social media and digital projects.</p>
+</div>
 
-    <div class="services">
+<div class="service-card">
+    <div class="icon">📝</div>
+    <h3>Content Formatting</h3>
+    <p>Professional formatting and presentation of digital content.</p>
+</div>
 
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🌐
-            </div>
-
-            <h3>
-                Website Editing
-            </h3>
-
-            <p>
-                Modern business, personal and professional
-                website editing.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                📰
-            </div>
-
-            <h3>
-                News Channel Editing
-            </h3>
-
-            <p>
-                News layouts, graphics and professional
-                presentation designs.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                📷
-            </div>
-
-            <h3>
-                Photo Editing
-            </h3>
-
-            <p>
-                HD enhancement, retouching and creative
-                photo designs.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🎙️
-            </div>
-
-            <h3>
-                Male & Female Voice-Over
-            </h3>
-
-            <p>
-                Voice-over and narration for videos,
-                advertisements and media projects.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🎬
-            </div>
-
-            <h3>
-                Video Editing
-            </h3>
-
-            <p>
-                YouTube, Reels, Shorts and social media
-                video editing.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                📝
-            </div>
-
-            <h3>
-                Content Formatting
-            </h3>
-
-            <p>
-                Articles, blogs, news posts and digital
-                content formatting.
-            </p>
-
-        </div>
-
-
-    </div>
-
+</div>
 </div>
 
 </section>
 
-
-<!-- ==================================================
-     6. ABOUT
-================================================== -->
-
-<section id="about">
-
-<div class="container">
-
-
-    <div class="section-title">
-
-        <small>
-            ABOUT US
-        </small>
-
-        <h2>
-            Sehrish Media Studio
-        </h2>
-
-        <p>
-            Creative digital editing and media services.
-        </p>
-
-    </div>
-
-
-    <div class="about-grid">
-
-
-        <div class="about-box">
-
-            <h2>
-                Creative & Professional
-            </h2>
-
-            <p>
-
-                Sehrish Media Studio provides professional
-                digital editing and creative presentation
-                services with modern design and
-                high-quality visuals.
-
-            </p>
-
-            <br>
-
-            <p>
-
-                We help individuals, creators, businesses
-                and media projects create a strong digital
-                presence and professional visual identity.
-
-            </p>
-
-        </div>
-
-
-        <div class="about-box">
-
-            <h2>
-                Why Choose Us?
-            </h2>
-
-
-            <ul class="check-list">
-
-                <li>
-                    Modern Professional Design
-                </li>
-
-                <li>
-                    Mobile Friendly Websites
-                </li>
-
-                <li>
-                    HD Photo & Video Editing
-                </li>
-
-                <li>
-                    News Channel Editing
-                </li>
-
-                <li>
-                    Male & Female Voice-Over
-                </li>
-
-                <li>
-                    WhatsApp Support
-                </li>
-
-            </ul>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- ==================================================
-     7. PORTFOLIO
-================================================== -->
+<!-- ================= PORTFOLIO ================= -->
 
 <section id="portfolio">
 
 <div class="container">
 
+<div class="section-title">
+    <h2>Our Portfolio</h2>
+    <div class="gold-line"></div>
+    <p>Selected creative work and designs</p>
+</div>
 
-    <div class="section-title">
+<div class="portfolio-grid">
 
-        <small>
-            OUR WORK
-        </small>
+<div class="portfolio-card">
+    <img src="Alig.png" alt="Portfolio">
+    <div>
+        <h3>Creative Media Design</h3>
+        <p>Premium digital media presentation.</p>
+    </div>
+</div>
 
-        <h2>
-            Creative Portfolio
-        </h2>
+<div class="portfolio-card">
+    <img src="file_0000000067908208a6b9f18b45f1d51e.png" alt="Portfolio">
+    <div>
+        <h3>Studio Creative</h3>
+        <p>Professional visual design project.</p>
+    </div>
+</div>
 
-        <p>
-            Modern digital and media studio designs.
-        </p>
-
+<div class="portfolio-card">
+    <div class="generated-visual" style="height:230px;">
+        <div>
+            <h3 style="color:#f5d98b;">SM STUDIO</h3>
+            <p style="color:#aaa;margin-top:8px;">
+                Digital Creative Work
+            </p>
+        </div>
     </div>
 
-
-    <div class="portfolio">
-
-
-        <div class="portfolio-box">
-
-            <img
-                src="Alig.png"
-                alt="Alig Design">
-
-        </div>
-
-
-        <div class="portfolio-box">
-
-            <img
-                src="file_0000000067908208a6b9f18b45f1d51e.png"
-                alt="Editing Design">
-
-        </div>
-
-
-        <div class="portfolio-box">
-
-            <div class="generated-card">
-
-                <div>
-
-                    <strong>
-                        🎥 MEDIA
-                    </strong>
-
-                    <span>
-                        Creative Studio
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="portfolio-box">
-
-            <div class="generated-card">
-
-                <div>
-
-                    <strong>
-                        🎙️ VOICE
-                    </strong>
-
-                    <span>
-                        Male & Female Voice-Over
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
+    <div>
+        <h3>Digital Project</h3>
+        <p>Creative website and media concept.</p>
     </div>
+</div>
+
+</div>
 
 </div>
 
 </section>
 
+<!-- ================= ORDER ================= -->
 
-<!-- ==================================================
-     8. CONTACT
-================================================== -->
-
-<section id="contact" class="contact-section">
+<section id="order" class="order-section">
 
 <div class="container">
 
+<div class="section-title">
+    <h2>Customer Order</h2>
+    <div class="gold-line"></div>
+    <p>Apna project details bhejein — order WhatsApp par send hoga</p>
+</div>
 
-    <h2>
-        Contact Us
-    </h2>
+<div class="order-box">
 
+<form id="orderForm">
 
+<div class="form-grid">
+
+<div class="form-group">
+    <label>Your Name</label>
+    <input type="text" id="customerName" placeholder="Enter your name" required>
+</div>
+
+<div class="form-group">
+    <label>WhatsApp Number</label>
+    <input type="tel" id="customerPhone" placeholder="03XXXXXXXXX" required>
+</div>
+
+<div class="form-group">
+    <label>Select Service</label>
+
+    <select id="service" required>
+        <option value="">Choose Service</option>
+        <option>Website Editing</option>
+        <option>News Channel Editing</option>
+        <option>Photo Editing</option>
+        <option>Video Editing</option>
+        <option>Male Voice-Over</option>
+        <option>Female Voice-Over</option>
+        <option>Content Formatting</option>
+        <option>Other</option>
+    </select>
+
+</div>
+
+<div class="form-group">
+    <label>Priority</label>
+
+    <select id="priority">
+        <option>Normal</option>
+        <option>Urgent</option>
+    </select>
+
+</div>
+
+<div class="form-group full">
+    <label>Project Details</label>
+
+    <textarea id="details"
+    placeholder="Apne project ki complete details yahan likhein..."
+    required></textarea>
+
+</div>
+
+<div class="form-group full">
+
+<button class="order-btn" type="submit">
+    📲 Send Order on WhatsApp
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+<div class="order-note">
+    Order button press karne par WhatsApp open hoga aur aapki details message mein ready hongi.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= REVIEWS ================= -->
+
+<section id="reviews">
+
+<div class="container">
+
+<div class="section-title">
+    <h2>Customer Reviews</h2>
+    <div class="gold-line"></div>
+    <p>Apna real experience share karein</p>
+</div>
+
+<!-- REAL REVIEWS YAHAN ADD KIYE JA SAKTE HAIN -->
+
+<div class="review-grid">
+
+<div class="review-card">
+    <div class="stars">★★★★★</div>
+    <h4>Customer Review</h4>
     <p>
-        For website, photo, video or editing work,
-        contact Sehrish Media Studio.
+        Your real customer review will appear here.
     </p>
+</div>
 
+<div class="review-card">
+    <div class="stars">★★★★★</div>
+    <h4>Customer Review</h4>
+    <p>
+        Your real customer review will appear here.
+    </p>
+</div>
 
-    <a
-        class="whatsapp-button"
-        href="https://wa.me/923220751456"
-        target="_blank">
+<div class="review-card">
+    <div class="stars">★★★★★</div>
+    <h4>Customer Review</h4>
+    <p>
+        Your real customer review will appear here.
+    </p>
+</div>
 
-        🟢 WhatsApp
-        &nbsp;
-        0322-0751456
+</div>
 
-    </a>
+<!-- REVIEW FORM -->
 
+<div class="review-form">
+
+<h3 style="color:#f5d98b;text-align:center;margin-bottom:20px;">
+    ⭐ Submit Your Review
+</h3>
+
+<form id="reviewForm">
+
+<div class="form-group">
+
+<label>Your Name</label>
+
+<input
+type="text"
+id="reviewName"
+placeholder="Enter your name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Your Rating</label>
+
+<select id="reviewRating" required>
+
+<option value="">Select Rating</option>
+<option value="★★★★★">★★★★★ - Excellent</option>
+<option value="★★★★☆">★★★★☆ - Very Good</option>
+<option value="★★★☆☆">★★★☆☆ - Good</option>
+<option value="★★☆☆☆">★★☆☆☆ - Average</option>
+<option value="★☆☆☆☆">★☆☆☆☆ - Poor</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Your Review</label>
+
+<textarea
+id="reviewText"
+placeholder="Apna experience likhein..."
+required></textarea>
+
+</div>
+
+<button class="review-btn" type="submit">
+    📲 Send Review on WhatsApp
+</button>
+
+</form>
+
+<p style="text-align:center;color:#777;font-size:12px;margin-top:12px;">
+    Review WhatsApp par send hoga.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+    <h2>About Sehrish Media Studio</h2>
+    <div class="gold-line"></div>
+</div>
+
+<div class="about-grid">
+
+<div class="about-box">
+
+<h3>Who We Are</h3>
+
+<p>
+Sehrish Media Studio provides professional digital creative services
+including website editing, photo editing, video editing, news channel
+design, voice-over and content formatting.
+</p>
+
+</div>
+
+<div class="about-box">
+
+<h3>Why Choose Us</h3>
+
+<ul>
+<li>Professional creative work</li>
+<li>Modern digital pres
+    <li>Modern digital presentation</li>
+<li>Responsive website designs</li>
+<li>Direct WhatsApp communication</li>
+<li>Customer-focused service</li>
+</ul>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- ==================================================
-     9. FOOTER
-================================================== -->
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Contact Us</h2>
+
+<div class="gold-line"></div>
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>Sehrish Media Studio</h2>
+
+<p>
+Project, website, photo, video ya kisi bhi digital service ke liye
+WhatsApp par contact karein.
+</p>
+
+<a
+class="whatsapp"
+href="https://wa.me/923220751456"
+target="_blank">
+
+💬 WhatsApp: 03220751456
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <strong>
-        👑 Sehrish Media Studio
-    </strong>
+<h3>Sehrish Media Studio</h3>
 
-    <br><br>
+<p>
+Professional Digital Creative Services
+</p>
 
-    Creative • Modern • Professional
-
-    <br><br>
-
-    Website Editing • Photo Editing • Video Editing
-    • Voice-Over
-
-    <br><br>
-
-    © 2026 Sehrish Media Studio
-    — All Rights Reserved
+<p style="margin-top:8px;">
+© 2026 Sehrish Media Studio — All Rights Reserved
+</p>
 
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* ================= CUSTOMER ORDER ================= */
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById("customerName").value.trim();
+
+const phone =
+document.getElementById("customerPhone").value.trim();
+
+const service =
+document.getElementById("service").value;
+
+const priority =
+document.getElementById("priority").value;
+
+const details =
+document.getElementById("details").value.trim();
+
+
+const message =
+`*Sehrish Media Studio - New Customer Order*
+
+👤 Name: ${name}
+
+📱 WhatsApp: ${phone}
+
+🛠️ Service: ${service}
+
+⚡ Priority: ${priority}
+
+📝 Project Details:
+${details}
+
+Thank you.`;
+
+
+const whatsappURL =
+"https://wa.me/923220751456?text=" +
+encodeURIComponent(message);
+
+window.open(whatsappURL, "_blank");
+
+});
+
+
+/* ================= CUSTOMER REVIEW ================= */
+
+document.getElementById("reviewForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+
+const name =
+document.getElementById("reviewName").value.trim();
+
+const rating =
+document.getElementById("reviewRating").value;
+
+const review =
+document.getElementById("reviewText").value.trim();
+
+
+const message =
+`*Sehrish Media Studio - Customer Review*
+
+👤 Customer Name:
+${name}
+
+⭐ Rating:
+${rating}
+
+💬 Review:
+${review}
+
+Thank you for your feedback.`;
+
+
+const whatsappURL =
+"https://wa.me/923220751456?text=" +
+encodeURIComponent(message);
+
+window.open(whatsappURL, "_blank");
+
+});
+
+</script>
+
 </body>
+
 </html>
