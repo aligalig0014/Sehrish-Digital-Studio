@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sehrish Media Studio - Professional Website, News Channel, Photo, Video and Voice-Over Editing Services">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>Sehrish Media Studio</title>
 
 <style>
@@ -19,632 +19,362 @@ html{
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#020711;
-    color:#fff;
-    overflow-x:hidden;
+    background:#03070d;
+    color:white;
 }
 
-:root{
-    --gold:#ffc928;
-    --gold2:#ff9d00;
-    --blue:#0875bd;
-    --dark:#020711;
-    --card:#071322;
-    --line:#765b16;
-    --muted:#aeb8c8;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-/* ================= NAVBAR ================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:9999;
-    background:rgba(1,6,15,.96);
-    border-bottom:1px solid #5d4915;
-    backdrop-filter:blur(15px);
-}
-
-.nav{
+.container{
+    width:92%;
     max-width:1250px;
     margin:auto;
-    min-height:80px;
-    padding:10px 25px;
+}
+
+/* TOP MAIN PHOTO */
+
+.top-photo{
+    padding:18px;
+    background:linear-gradient(135deg,#02050a,#101b2c,#02050a);
+}
+
+.top-photo img{
+    width:100%;
+    display:block;
+    max-height:600px;
+    object-fit:cover;
+    border:3px solid #d7a92d;
+    border-radius:20px;
+    box-shadow:
+    0 0 15px #d7a92d,
+    0 0 45px #d7a92d55;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:#05080df7;
+    border-top:1px solid #d7a92d;
+    border-bottom:1px solid #d7a92d;
+    box-shadow:0 5px 25px #000;
+}
+
+.navbar{
+    min-height:72px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:15px;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
+    color:#ffd34d;
+    font-size:25px;
+    font-weight:bold;
 }
 
-.crown{
-    font-size:32px;
-}
-
-.logo-text{
-    font-size:34px;
-    font-weight:900;
-    font-style:italic;
-    color:var(--gold);
-    text-shadow:0 0 15px #ffb30066;
-}
-
-.logo-sub{
+.logo span{
     display:block;
-    font-size:11px;
-    letter-spacing:4px;
     color:white;
+    font-size:9px;
+    letter-spacing:4px;
     text-align:center;
-    margin-top:-5px;
 }
 
 .menu{
     display:flex;
-    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:5px;
 }
 
 .menu a{
-    color:#fff;
-    text-decoration:none;
+    padding:10px 13px;
+    border-radius:8px;
     font-size:14px;
     font-weight:bold;
-    transition:.3s;
 }
 
 .menu a:hover{
-    color:var(--gold);
+    background:#ffd34d;
+    color:#000;
 }
 
-.nav-btn{
-    background:linear-gradient(135deg,#ffd94f,#eea400);
-    color:#111!important;
-    padding:12px 20px;
+.whatsapp{
+    background:#20c968;
+    color:#001b0b;
+    padding:11px 16px;
     border-radius:30px;
-    box-shadow:0 0 20px #ffbd0038;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:650px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-    background:
-    radial-gradient(circle at 20% 50%,#123a63 0,transparent 32%),
-    radial-gradient(circle at 80% 40%,#172d58 0,transparent 30%),
-    linear-gradient(135deg,#020711,#071525);
-}
-
-.hero:before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(90deg,transparent 49%,#f7c42a22 50%,transparent 51%);
-    pointer-events:none;
-}
-
-.hero-content{
-    width:min(1150px,92%);
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1.1fr;
-    gap:50px;
-    align-items:center;
-}
-
-.hero-photo{
-    position:relative;
-    padding:14px;
-    border-radius:30px;
-    background:linear-gradient(135deg,#fff2a0,#ffbd00,#754900,#ffd83e);
-    box-shadow:
-        0 0 0 3px #17100a,
-        0 0 35px #ffbd0055,
-        0 25px 60px #000;
-    transform:perspective(900px) rotateY(3deg);
-}
-
-.hero-photo:before{
-    content:"";
-    position:absolute;
-    inset:5px;
-    border:2px solid #fff0a0;
-    border-radius:25px;
-    pointer-events:none;
-}
-
-.hero-photo img{
-    width:100%;
-    height:430px;
-    object-fit:cover;
-    display:block;
-    border-radius:20px;
-}
-
-.photo-placeholder{
-    height:430px;
-    border-radius:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px;
-    background:
-    radial-gradient(circle,#27476b,#08111e 70%);
-    color:#ffd43e;
-    font-size:24px;
     font-weight:bold;
 }
 
-.welcome{
-    color:#fff;
-    font-style:italic;
-    font-size:25px;
+/* SLIDER */
+
+.slider-section{
+    padding:35px 0;
+    background:
+    radial-gradient(circle at 80% 20%,#152e52,#03070d 60%);
 }
 
-.hero-title{
-    font-size:clamp(50px,7vw,90px);
-    line-height:.95;
-    color:var(--gold);
-    font-style:italic;
-    text-shadow:0 0 20px #ffb30055;
-    margin:5px 0;
+.slider{
+    position:relative;
+    overflow:hidden;
+    border:2px solid #d7a92d;
+    border-radius:22px;
+    box-shadow:0 0 40px #d7a92d44;
 }
 
-.hero-sub{
-    font-size:34px;
-    font-weight:900;
-    letter-spacing:2px;
+.slide{
+    display:none;
+    position:relative;
 }
 
-.hero-desc{
-    max-width:650px;
-    color:#d6dce7;
-    font-size:17px;
-    margin:22px 0;
-}
-
-.hero-btn{
-    display:inline-block;
-    padding:15px 28px;
-    background:linear-gradient(135deg,#ffe16a,#eea300);
-    color:#111;
-    border-radius:30px;
-    font-weight:900;
-    text-decoration:none;
-    box-shadow:0 0 30px #ffb30044;
-    transition:.3s;
-}
-
-.hero-btn:hover{
-    transform:translateY(-4px) scale(1.02);
-}
-
-.features{
-    display:flex;
-    gap:35px;
-    margin-top:28px;
-}
-
-.feature{
-    text-align:center;
-    font-size:12px;
-    color:#d9e0eb;
-}
-
-.feature b{
+.slide.active{
     display:block;
-    font-size:24px;
-    color:var(--gold);
 }
 
-/* ================= SECTION ================= */
+.slide img{
+    width:100%;
+    height:480px;
+    object-fit:cover;
+    display:block;
+}
+
+.caption{
+    position:absolute;
+    left:30px;
+    bottom:25px;
+    background:#000c;
+    padding:18px 25px;
+    border-left:4px solid #ffd34d;
+    border-radius:12px;
+}
+
+.caption h1{
+    color:#ffd34d;
+    font-size:38px;
+}
+
+.caption p{
+    margin-top:7px;
+}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid #ffd34d;
+    background:#000c;
+    color:#ffd34d;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+/* SECTIONS */
 
 section{
-    padding:80px 5%;
+    padding:65px 0;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.section-head{
+.heading{
     text-align:center;
-    margin-bottom:45px;
+    margin-bottom:30px;
 }
 
-.section-head small{
-    color:var(--gold);
-    font-weight:900;
-    letter-spacing:3px;
+.heading h2{
+    color:#ffd34d;
+    font-size:35px;
 }
 
-.section-head h2{
-    font-size:42px;
-    margin:7px 0;
+.heading p{
+    color:#aeb8c7;
+    margin-top:6px;
 }
 
-.section-head p{
-    color:var(--muted);
-}
-
-/* ================= 3D CARDS ================= */
+/* SERVICES */
 
 .services{
     display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:15px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.service{
-    position:relative;
-    min-height:250px;
-    padding:13px;
-    text-align:center;
-    border-radius:20px;
-    background:linear-gradient(145deg,#0c1b2d,#030811);
-    border:2px solid #b08a20;
-    box-shadow:
-        inset 0 0 20px #ffcf3210,
-        0 10px 25px #000;
-    transition:.35s;
+.card{
+    background:linear-gradient(145deg,#101a27,#05080d);
+    border:1px solid #c99725;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 30px #000;
+    transition:.3s;
 }
 
-.service:before{
-    content:"";
-    position:absolute;
-    inset:5px;
-    border:1px solid #ffe36b55;
-    border-radius:15px;
-    pointer-events:none;
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 0 25px #d7a92d55;
 }
 
-.service:hover{
-    transform:translateY(-10px) perspective(600px) rotateX(3deg);
-    border-color:#ffe16a;
-    box-shadow:
-        0 0 25px #ffc40044,
-        0 20px 40px #000;
+.icon{
+    font-size:40px;
 }
 
-.service-icon{
-    height:100px;
-    border-radius:13px;
-    margin-bottom:13px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:45px;
-    background:
-    radial-gradient(circle,#15466f,#08101b 75%);
-    border:1px solid #277eb5;
+.card h3{
+    color:#ffd34d;
+    margin:12px 0;
 }
 
-.service h3{
-    font-size:16px;
-    margin-bottom:8px;
-    color:#fff;
+.card p{
+    color:#c2cad5;
+    line-height:1.6;
 }
 
-.service p{
-    color:#aab5c5;
-    font-size:11px;
-}
+/* ABOUT */
 
-/* ================= ABOUT ================= */
-
-.about-grid{
+.about{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:25px;
 }
 
-.about-box{
-    padding:35px;
-    min-height:260px;
-    border-radius:22px;
-    background:linear-gradient(145deg,#0b1a2c,#030811);
-    border:2px solid #765b16;
-    box-shadow:inset 0 0 35px #ffbd0010;
+.box{
+    background:#080d14;
+    border:1px solid #c99725;
+    border-radius:18px;
+    padding:30px;
 }
 
-.about-box h2{
-    color:var(--gold);
+.box h2{
+    color:#ffd34d;
     margin-bottom:15px;
 }
 
-.about-box p{
-    color:#b5c0d0;
-    line-height:1.8;
+.box p{
+    color:#c4ccd7;
+    line-height:1.7;
 }
 
-.about-box ul{
+.box ul{
     list-style:none;
 }
 
-.about-box li{
-    padding:8px 0;
-    color:#dbe2ec;
+.box li{
+    padding:10px 0;
+    border-bottom:1px solid #ffffff12;
 }
 
-.about-box li:before{
-    content:"✓";
-    color:var(--gold);
-    font-weight:bold;
-    margin-right:10px;
-}
-
-/* ================= PORTFOLIO ================= */
+/* PORTFOLIO */
 
 .portfolio{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    gap:18px;
 }
 
-.port-card{
-    overflow:hidden;
-    border:2px solid #765b16;
-    border-radius:20px;
-    background:#071321;
+.portfolio img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:16px;
+    border:1px solid #d7a92d;
     transition:.3s;
 }
 
-.port-card:hover{
-    transform:translateY(-8px);
-    border-color:var(--gold);
+.portfolio img:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 25px #d7a92d66;
 }
 
-.port-image{
-    height:200px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:55px;
-    background:
-    radial-gradient(circle,#1c5c88,#06101d);
-}
-
-.port-card h3{
-    padding:15px 18px 3px;
-    color:var(--gold);
-}
-
-.port-card p{
-    padding:0 18px 20px;
-    color:#99a7ba;
-    font-size:13px;
-}
-
-/* ================= STATS ================= */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.stat{
-    padding:30px;
-    text-align:center;
-    border:2px solid #765b16;
-    border-radius:20px;
-    background:#071321;
-}
-
-.stat strong{
-    display:block;
-    font-size:38px;
-    color:var(--gold);
-}
-
-.stat span{
-    color:#aeb9c8;
-}
-
-/* ================= TESTIMONIAL ================= */
-
-.testimonials{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.review{
-    padding:25px;
-    border:2px solid #765b16;
-    border-radius:20px;
-    background:#071321;
-}
-
-.stars{
-    color:#ffd029;
-    margin-bottom:10px;
-}
-
-.review p{
-    color:#adb8c8;
-    font-size:14px;
-}
-
-.review h4{
-    margin-top:15px;
-}
-
-/* ================= CONTACT ================= */
+/* CONTACT */
 
 .contact{
     text-align:center;
+    background:linear-gradient(135deg,#0c1727,#02050a);
+    border-top:1px solid #d7a92d;
+    border-bottom:1px solid #d7a92d;
 }
 
-.contact-box{
-    padding:65px 25px;
-    border-radius:30px;
-    border:2px solid #b38b20;
-    background:
-    radial-gradient(circle at 50% 0,#143a60,transparent 55%),
-    #06101c;
-    box-shadow:0 0 50px #ffbd0018;
+.number{
+    color:#ffd34d;
+    font-size:38px;
+    font-weight:bold;
+    margin:18px;
 }
 
-.contact-box h2{
-    font-size:42px;
-}
-
-.contact-box p{
-    color:#adb9c9;
-    margin:12px 0;
-}
-
-.phone{
-    color:var(--gold);
-    font-size:clamp(30px,6vw,55px);
-    font-weight:900;
-    margin:15px 0 25px;
-}
-
-.whatsapp{
+.contact-btn{
     display:inline-block;
-    padding:16px 30px;
+    background:#ffd34d;
+    color:#050505;
+    padding:14px 25px;
     border-radius:30px;
-    background:linear-gradient(135deg,#ffe269,#efa600);
-    color:#111;
-    font-weight:900;
-    text-decoration:none;
+    font-weight:bold;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-    padding:35px 5%;
-    border-top:1px solid #5d4915;
-    background:#01050c;
-}
-
-.footer-grid{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    text-align:center;
+    padding:30px;
+    color:#9ba6b5;
 }
 
 .footer-logo{
-    color:var(--gold);
-    font-size:27px;
-    font-weight:900;
-    font-style:italic;
+    color:#ffd34d;
+    font-size:25px;
+    font-weight:bold;
 }
 
-.footer-links a{
-    color:#9ba8ba;
-    text-decoration:none;
-    margin-left:18px;
-    font-size:13px;
-}
+/* MOBILE */
 
-.copyright{
-    color:#657286;
-    font-size:12px;
-    margin-top:20px;
-    text-align:center;
-}
+@media(max-width:850px){
 
-/* ================= MOBILE ================= */
-
-@media(max-width:1000px){
-
-    .services{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .hero-content{
-        grid-template-columns:1fr;
-    }
-
-    .hero-photo{
-        max-width:600px;
-        margin:auto;
-        order:2;
-    }
-}
-
-@media(max-width:700px){
-
-    .menu{
-        display:none;
-    }
-
-    .logo-text{
-        font-size:25px;
-    }
-
-    .hero{
-        padding:60px 0;
-    }
-
-    .hero-content{
-        width:92%;
-    }
-
-    .hero-title{
-        font-size:55px;
-    }
-
-    .hero-sub{
-        font-size:25px;
-    }
-
-    .features{
-        justify-content:center;
-        gap:18px;
-    }
-
-    .services{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .about-grid,
-    .portfolio,
-    .testimonials{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-grid{
+    .navbar{
         flex-direction:column;
-        gap:20px;
+        padding:12px 0;
     }
-}
 
-@media(max-width:450px){
+    .menu a{
+        padding:8px 9px;
+        font-size:12px;
+    }
 
-    .services{
+    .services,
+    .about,
+    .portfolio{
         grid-template-columns:1fr;
     }
 
-    .stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .hero-photo img,
-    .photo-placeholder{
+    .slide img{
         height:330px;
     }
 
-    .contact-box h2{
-        font-size:30px;
+    .caption{
+        left:15px;
+        right:15px;
+        bottom:15px;
+    }
+
+    .caption h1{
+        font-size:25px;
+    }
+
+    .number{
+        font-size:27px;
     }
 }
 </style>
@@ -652,107 +382,116 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =================================================
+     ALIG PHOTO — SAB SE TOP PAR
+================================================== -->
 
-<header>
+<div class="top-photo" id="home">
 
-<div class="nav">
+    <div class="container">
 
-<div class="logo">
-    <div class="crown">👑</div>
-    <div>
-        <div class="logo-text">Sehrish</div>
-        <span class="logo-sub">MEDIA STUDIO</span>
+        <img src="Alig.png"
+             alt="Sehrish Media Studio">
+
     </div>
+
 </div>
 
-<nav class="menu">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+
+<!-- =================================================
+     MENU
+================================================== -->
+
+<nav>
+
+<div class="container navbar">
+
+    <a href="#home" class="logo">
+        ♛ Sehrish
+        <span>MEDIA STUDIO</span>
+    </a>
+
+    <div class="menu">
+
+        <a href="#home">Home</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#portfolio">Portfolio</a>
+
+        <a href="#about">About</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+    <a class="whatsapp"
+       href="https://wa.me/923220751456">
+
+       WhatsApp
+
+    </a>
+
+</div>
+
 </nav>
 
-<a class="nav-btn" href="https://wa.me/923220751456" target="_blank">
-    WhatsApp
-</a>
 
-</div>
+<!-- =================================================
+     MOVING SLIDER
+================================================== -->
 
-</header>
+<section class="slider-section">
 
+<div class="container">
 
-<!-- ================= HERO ================= -->
+<div class="slider">
 
-<section class="hero" id="home">
+    <div class="slide active">
 
-<div class="hero-content">
+        <img src="studio1.png"
+             alt="Professional Editing">
 
-<div class="hero-photo">
+        <div class="caption">
 
-<!--
-اگر اپنی generated photo لگانی ہو:
-banner.png کو GitHub میں upload کریں
-اور نیچے والا img uncomment کریں۔
--->
+            <h1>Professional Editing</h1>
 
-<img src="banner.png"
-     alt="Sehrish Media Studio"
-     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <p>
+                Website • News • Photo • Video • Voice-Over
+            </p>
 
-<div class="photo-placeholder">
-    Sehrish Media Studio<br>
-    Professional Creative Services
-</div>
+        </div>
 
-</div>
+    </div>
 
 
-<div>
+    <div class="slide">
 
-<div class="welcome">
-    Welcome to
-</div>
+        <img src="studio2.png"
+             alt="Sehrish Media Studio">
 
-<h1 class="hero-title">
-    Sehrish
-</h1>
+        <div class="caption">
 
-<div class="hero-sub">
-    MEDIA STUDIO
-</div>
+            <h1>Sehrish Media Studio</h1>
 
-<p class="hero-desc">
-    Professional Website Editing, News Channel Design,
-    Photo & Video Editing, Male & Female Voice-Over
-    and Digital Creative Services.
-</p>
+            <p>
+                Creative • Modern • Professional
+            </p>
 
-<a class="hero-btn"
-   href="https://wa.me/923220751456?text=Hello%20Sehrish%20Media%20Studio%2C%20I%20need%20your%20services."
-   target="_blank">
-   🟢 Contact on WhatsApp →
-</a>
+        </div>
 
-<div class="features">
+    </div>
 
-<div class="feature">
-    <b>⚡</b>
-    Fast Delivery
-</div>
 
-<div class="feature">
-    <b>✓</b>
-    High Quality
-</div>
+    <button class="arrow prev"
+            onclick="moveSlide(-1)">
+        ‹
+    </button>
 
-<div class="feature">
-    <b>♧</b>
-    24/7 Support
-</div>
-
-</div>
+    <button class="arrow next"
+            onclick="moveSlide(1)">
+        ›
+    </button>
 
 </div>
 
@@ -761,56 +500,111 @@ banner.png کو GitHub میں upload کریں
 </section>
 
 
-<!-- ================= SERVICES ================= -->
+<!-- =================================================
+     SERVICES
+================================================== -->
 
 <section id="services">
 
 <div class="container">
 
-<div class="section-head">
-    <small>OUR SERVICES</small>
-    <h2>Professional Editing Services</h2>
-    <p>Creative • Modern • Reliable</p>
+<div class="heading">
+
+<h2>Professional Editing Services</h2>
+
+<p>
+Creative digital services for your projects
+</p>
+
 </div>
 
 
 <div class="services">
 
-<div class="service">
-<div class="service-icon">🌐</div>
+
+<div class="card">
+
+<div class="icon">🌐</div>
+
 <h3>Website Editing</h3>
-<p>Business, personal, news and custom websites.</p>
+
+<p>
+Professional business, personal and news websites
+with modern responsive design.
+</p>
+
 </div>
 
-<div class="service">
-<div class="service-icon">📰</div>
-<h3>News Channel</h3>
-<p>News portal layouts and breaking news designs.</p>
+
+<div class="card">
+
+<div class="icon">📰</div>
+
+<h3>News Channel Editing</h3>
+
+<p>
+News layouts, breaking news graphics and
+professional presentation designs.
+</p>
+
 </div>
 
-<div class="service">
-<div class="service-icon">📸</div>
+
+<div class="card">
+
+<div class="icon">📷</div>
+
 <h3>Photo Editing</h3>
-<p>Retouching, HD enhancement and background editing.</p>
+
+<p>
+HD photo enhancement, retouching,
+background editing and creative designs.
+</p>
+
 </div>
 
-<div class="service">
-<div class="service-icon">🎙️</div>
-<h3>Male & Female Voice</h3>
-<p>Professional voice-over for ads and projects.</p>
+
+<div class="card">
+
+<div class="icon">🎙️</div>
+
+<h3>Male & Female Voice-Over</h3>
+
+<p>
+Voice-over and narration for videos,
+advertisements and social media projects.
+</p>
+
 </div>
 
-<div class="service">
-<div class="service-icon">🎬</div>
+
+<div class="card">
+
+<div class="icon">🎬</div>
+
 <h3>Video Editing</h3>
-<p>YouTube, reels, shorts and social media videos.</p>
+
+<p>
+YouTube videos, Reels, Shorts and
+social media video editing.
+</p>
+
 </div>
 
-<div class="service">
-<div class="service-icon">✍️</div>
+
+<div class="card">
+
+<div class="icon">📝</div>
+
 <h3>Content Formatting</h3>
-<p>Articles, blogs and professional news content.</p>
+
+<p>
+Articles, blogs, news posts and
+professional digital content.
+</p>
+
 </div>
+
 
 </div>
 
@@ -819,109 +613,90 @@ banner.png کو GitHub میں upload کریں
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =================================================
+     ABOUT
+================================================== -->
 
 <section id="about">
 
-<div class="container">
+<div class="container about">
 
-<div class="about-grid">
 
-<div class="about-box">
+<div class="box">
 
-<h2>About Sehrish</h2>
+<h2>About Sehrish Media Studio</h2>
 
 <p>
+
 Sehrish Media Studio provides professional
-digital editing services with modern design,
-creative presentation and high-quality results.
-</p>
+digital editing and creative presentation
+services with modern design and high-quality
+visual presentation.
 
-<br>
-
-<p>
-We help individuals, creators, businesses and
-media projects create a professional digital
-presence.
 </p>
 
 </div>
 
 
-<div class="about-box">
+<div class="box">
 
 <h2>Why Choose Us?</h2>
 
 <ul>
-<li>Modern Professional Design</li>
-<li>3D Style Visual Presentation</li>
-<li>High Quality Photo Editing</li>
-<li>News Channel Editing</li>
-<li>Male & Female Voice-Over</li>
-<li>Video & Social Media Editing</li>
-<li>Fast Communication</li>
-<li>WhatsApp Support</li>
+
+<li>✓ Modern Professional Design</li>
+
+<li>✓ Mobile Friendly Websites</li>
+
+<li>✓ HD Photo Editing</li>
+
+<li>✓ News Channel Editing</li>
+
+<li>✓ Video Editing</li>
+
+<li>✓ Male & Female Voice-Over</li>
+
+<li>✓ WhatsApp Support</li>
+
 </ul>
 
 </div>
 
-</div>
 
 </div>
 
 </section>
 
 
-<!-- ================= PORTFOLIO ================= -->
+<!-- =================================================
+     PORTFOLIO
+================================================== -->
 
 <section id="portfolio">
 
 <div class="container">
 
-<div class="section-head">
-    <small>OUR PORTFOLIO</small>
-    <h2>Creative Digital Work</h2>
-    <p>Professional solutions for modern projects.</p>
+<div class="heading">
+
+<h2>Our Portfolio</h2>
+
+<p>
+Creative work and media studio designs
+</p>
+
 </div>
 
 
 <div class="portfolio">
 
-<div class="port-card">
-<div class="port-image">💻</div>
-<h3>Website Design</h3>
-<p>Modern responsive website projects.</p>
-</div>
+<img src="studio1.png"
+     alt="Website Editing">
 
-<div class="port-card">
-<div class="port-image">📰</div>
-<h3>News Channel</h3>
-<p>Professional news channel layouts.</p>
-</div>
+<img src="studio2.png"
+     alt="Media Studio">
 
-<div class="port-card">
-<div class="port-image">📸</div>
-<h3>Photo Editing</h3>
-<p>HD photo enhancement and creative editing.</p>
-</div>
-
-<div class="port-card">
-<div class="port-image">🎙️</div>
-<h3>Voice Over</h3>
-<p>Male and female professional voice projects.</p>
-</div>
-
-<div class="port-card">
-<div class="port-image">🎬</div>
-<h3>Video Editing</h3>
-<p>Videos, reels and social media content.</p>
-</div>
-
-<div class="port-card">
-<div class="port-image">📝</div>
-<h3>Content Design</h3>
-<p>Articles, blogs and digital content.</p>
-</div>
+<img src="Alig.png"
+     alt="Sehrish Studio">
 
 </div>
 
@@ -930,154 +705,120 @@ presence.
 </section>
 
 
-<!-- ================= STATS ================= -->
+<!-- =================================================
+     CONTACT
+================================================== -->
 
-<section>
-
-<div class="container">
-
-<div class="stats">
-
-<div class="stat">
-<strong>100+</strong>
-<span>Creative Projects</span>
-</div>
-
-<div class="stat">
-<strong>24/7</strong>
-<span>Support</span>
-</div>
-
-<div class="stat">
-<strong>HD</strong>
-<span>Quality Work</span>
-</div>
-
-<div class="stat">
-<strong>5★</strong>
-<span>Professional Service</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= TESTIMONIALS ================= -->
-
-<section>
+<section class="contact"
+         id="contact">
 
 <div class="container">
 
-<div class="section-head">
+<div class="heading">
 
-<small>CLIENT FEEDBACK</small>
-
-<h2>What Clients Say</h2>
-
-<p>Professional work and reliable communication.</p>
-
-</div>
-
-
-<div class="testimonials">
-
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>
-"Professional editing and beautiful website
-presentation. The work looks very modern."
-</p>
-<h4>Client Review</h4>
-</div>
-
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>
-"Great communication and clean creative
-design. Very professional service."
-</p>
-<h4>Client Review</h4>
-</div>
-
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>
-"High quality work with a professional
-digital look."
-</p>
-<h4>Client Review</h4>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<div class="contact-box">
-
-<h2>Need Professional Editing?</h2>
+<h2>Let's Work Together</h2>
 
 <p>
-Get in touch for your next project.
-We are just one WhatsApp message away.
+For website, photo, video or editing work,
+contact Sehrish Media Studio.
 </p>
 
-<div class="phone">
-03220751456
 </div>
 
-<a class="whatsapp"
-href="https://wa.me/923220751456?text=Hello%20Sehrish%20Media%20Studio%2C%20I%20want%20to%20discuss%20a%20project."
-target="_blank">
 
-🟢 Contact on WhatsApp
+<div class="number">
+
+0322-0751456
+
+</div>
+
+
+<a class="contact-btn"
+   href="https://wa.me/923220751456">
+
+   Contact on WhatsApp
 
 </a>
 
 </div>
 
-</div>
-
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =================================================
+     FOOTER
+================================================== -->
 
 <footer>
 
-<div class="footer-grid">
-
 <div class="footer-logo">
-    👑 Sehrish
-</div>
 
-<div class="footer-links">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-</div>
+♛ Sehrish Media Studio
 
 </div>
 
-<div class="copyright">
-© 2026 Sehrish Media Studio — All Rights Reserved
-</div>
+<p>
+Creative • Modern • Reliable
+</p>
+
+<p>
+© 2026 Sehrish Media Studio
+</p>
 
 </footer>
 
 
+<!-- =================================================
+     SLIDER JAVASCRIPT
+================================================== -->
+
+<script>
+
+let currentSlide = 0;
+
+const slides =
+document.querySelectorAll(".slide");
+
+
+function showSlide(number){
+
+    slides.forEach(function(slide){
+
+        slide.classList.remove("active");
+
+    });
+
+
+    currentSlide =
+    (number + slides.length)
+    % slides.length;
+
+
+    slides[currentSlide]
+    .classList.add("active");
+
+}
+
+
+function moveSlide(direction){
+
+    showSlide(
+        currentSlide + direction
+    );
+
+}
+
+
+/* Auto Slider */
+
+setInterval(function(){
+
+    moveSlide(1);
+
+},5000);
+
+</script>
+
+
 </body>
-  </html>
+    </html>
